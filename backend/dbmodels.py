@@ -154,4 +154,10 @@ class DetailOrder(db.Model):
             'detailorder_price_total' :self.detailorder_price_total,
         }
 
+class User(db.Model):
+    __tablename__ = "users"
 
+    id = db.Column(db.Integer,primary_key=True)
+    name = db.Column(db.String(100),unique=False)
+    email = db.Column(db.String(100),unique=True)
+    password = db.Column(db.String(100),unique=False)

@@ -6,13 +6,6 @@ from dbmodels import db, Product, Client, Order, Deliveries, DetailOrder
 app = Flask(__name__)
 app.config.from_object('config')
 db.init_app(app)
-#basedir = os.path.abspath(os.path.dirname(__file__))
-
-#app.config['SQLALCHEMY_DATABASE_URI'] = \
-#    'sqlite:///' + os.path.join(basedir,'database.db')
-#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-#db.init_app(app)
-
 CORS(app)
 
 with app.app_context():
