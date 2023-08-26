@@ -2,7 +2,7 @@ version: '3'
 services:
   tienda_database:
     image: postgres:13.0-alpine
-    container_name: tienda_database
+    container_name: database
     env_file:
       - ./database/.env
     expose:
