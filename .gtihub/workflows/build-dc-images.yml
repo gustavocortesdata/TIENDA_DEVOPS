@@ -1,0 +1,37 @@
+name: build docker images
+on:
+  push:
+    branches:
+     - main
+
+jobs:
+  ci-backend:
+    runs-on: ubuntu-lasted
+    container:
+      images: python
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install and test
+        working-directory: ./backend
+        run: 
+          python -m pip install - -upgrade pip
+          pip install -r requirements.txt
+      - name: Run test
+        working-directory: ./backend
+        run:
+          pytohn pytest
+
+  ci-frontend:
+    runs-on: ubuntu-lasted
+    container:
+      images: node
+    steps:
+      - name: Install frontend deps
+        working-directory: ./frontend
+        run: npm install
+      - name: Install frontend test
+        working-directory: ./frontend
+        run: npm test -- --watchAll=false
+
+
+  cd:
