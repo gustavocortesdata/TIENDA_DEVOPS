@@ -8,7 +8,7 @@ jobs:
   ci-backend:
     runs-on: ubuntu-lasted
     container:
-      images: python
+      image: python
     steps:
       - uses: actions/checkout@v1
       - name: Install and test
@@ -24,7 +24,7 @@ jobs:
   ci-frontend:
     runs-on: ubuntu-lasted
     container:
-      images: node
+      image: node
     steps:
       - name: Install frontend deps
         working-directory: ./frontend
