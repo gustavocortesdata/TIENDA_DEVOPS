@@ -12,7 +12,7 @@ jobs:
     container:
       image: python
 
-     services:
+    services:
       tienda_database:
         image: postgres:13.0-alpine
         env:
